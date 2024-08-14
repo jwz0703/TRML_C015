@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第26屆TRML高中數學競賽應考須知</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #1a2a3a;
+            --secondary-color: #2980b9;
+            --accent-color: #d35400;
+            --bg-color: #ecf0f1;
+            --text-color: #2c3e50;
+            --light-text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: var(--light-text);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(45deg) translateX(-200%) translateY(-200%); }
+            100% { transform: rotate(45deg) translateX(200%) translateY(200%); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: titleEnter 1s ease-out;
+        }
+
+        @keyframes titleEnter {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .team-name {
+            font-size: 1.3em;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin: 40px 0 20px;
+            font-size: 1.8em;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-color);
+            transform: translateX(-100%);
+            animation: borderSlide 0.5s forwards;
+        }
+
+        @keyframes borderSlide {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        .time-location {
+            background: var(--secondary-color);
+            color: #000000;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .time-location:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .time-location h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            text-align: center;
+        }
+
+        .time-location img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .time-location:hover img {
+            transform: scale(1.03);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: var(--light-text);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .important {
+            background: var(--accent-color);
+            color: var(--light-text);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .important::before {
+            content: '!';
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 2em;
+            font-weight: bold;
+            opacity: 0.3;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .rules, .details {
+            background: var(--light-text);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .rules:hover, .details:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .time-location {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .team-name {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>第26屆TRML高中數學競賽應考須知</h1>
+        <div class="team-name">隊名：C015</div>
+    </header>
+    <div class="container">
+        <h2>高雄考區時間流程與地點</h2>
+        <div class="time-location">
+            <h3>8月17日 (六)</h3>
+            <img src="https://www.99cef.org.tw/images/0817KSHS.jpg" alt="8月17日考試地點">
+            <ul>
+                <li><strong>地點：</strong>高雄市立高雄中學 (高雄市三民區建國三路50號)</li>
+                <li>13:00 ~ 14:40：參賽隊伍報到</li>
+                <li>13:40 ~ 14:30：試務-監考會議</li>
+                <li>15:00 ~ 15:20：團體賽</li>
+                <li>15:30 ~ 16:30：思考賽</li>
+                <li>17:00 ~ 20:00：試務-閱卷會議</li>
+            </ul>
+        </div>
+
+        <div class="time-location">
+            <h3>8月18日 (日)</h3>
+            <img src="https://www.99cef.org.tw/images/MCSH.jpg" alt="8月18日考試地點">
+            <ul>
+                <li><strong>地點：</strong>私立明誠高中 (高雄市鼓山區中華一路97號)</li>
+                <li>08:00 ~ 08:30：考生入場；試務-監考委員報到、試務-閱卷委員報到</li>
+                <li>08:30 ~ 11:30：考生考試；試務-監考委員監考、試務-閱卷委員閱卷</li>
+                <li>11:30：同分賽</li>
+                <li>12:00：頒獎典禮</li>
+                <li>12:45：禮成</li>
+            </ul>
+        </div>
+
+        <h2>重要提醒</h2>
+        <ul>
+            <li class="important">各隊員需攜帶有照片的身分證明文件參賽。</li>
+            <li class="important">直到頒獎典禮結束前皆為正式活動，提前離場的隊伍將不計算成績。</li>
+            <li class="important">若需計算可使用自行攜帶之無記號空白計算紙。</li>
+        </ul>
+
+        <div class="rules">
+            <h2>各項競賽規定</h2>
+            <p>請自行查閱《<a href="https://www.99cef.org.tw/trml.php" target="_blank">競賽項目及規則說明</a>》。</p>
+        </div>
+
+        <div class="details">
+            <p>詳細內容：<a href="https://www.99cef.org.tw/news_02.php?id=1074" target="_blank">官網</a></p>
+        </div>
+    </div>
+</body>
+</html>
