@@ -238,31 +238,24 @@
             transform: scaleX(1);
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 2.2em;
-            }
-            h2 {
-                font-size: 1.6em;
-            }
-            .time-location {
-                padding: 20px;
-            }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.4em;
-            }
-            .team-name {
-                font-size: 1.1em;
-            }
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -314,6 +307,8 @@
         <div class="details">
             <p>詳細內容：<a href="https://www.99cef.org.tw/news_02.php?id=1074" target="_blank">官網</a></p>
         </div>
+
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="cta-button" target="_blank">點擊這裡！</a>
     </div>
 </body>
 </html>
